@@ -3,7 +3,7 @@
 ### 项目介绍
 * 基于日常常用的CURD操作实现自定义admin示例Demo
 * 开发环境: Django(1.11.4)+BootStrap
-* 原理参考Django 自带的admin后台管理功能实现
+* 原理参考Django自带的admin管理后台功能实现
 
 ### 目录结构
 ```
@@ -11,7 +11,6 @@
 │   ├── settings.py         # 配置文件
 │   ├── urls.py             # 路由分发
 │   ├── views.py            # 试图处理
-├── README.md
 ├── app01
 │   ├── admin.py            # admin后台
 │   ├── arya.py             # arya组件使用
@@ -38,18 +37,19 @@
 2. 拉取代码并运行程序
 ```
 # git clone git@github.com:shuke163/CustAdmin.git
-# cd CustAdmin/;python manage.py runserver
+# cd CustAdmin
+# python manage.py runserver
 ```
-3. 浏览器访问
-登陆: http://127.0.0.1:8000/login/
+3. 浏览器访问  
+登陆: http://127.0.0.1:8000/login/  
 4. 测试账号
 ```
 username: shuke password: 123
 username: jack password: 123
 username: tom  password: 123
 ```
-5. 管理后台
-管理: http://127.0.0.1:8000/admin/
+5. 管理后台  
+管理: http://127.0.0.1:8000/admin/  
 登陆账号: username: admin password: admin!2345
 
 ### 原理
@@ -64,5 +64,5 @@ username: tom  password: 123
 
 ### 计划
 * 完善CURD操作的前端展示UI
-* 丰富arya组件的CURD功能,提高更灵活的定制化操作
+* 丰富arya组件的CURD功能,提高组件的灵活性和可配置性操作
 * 结合RBAC组件使用
