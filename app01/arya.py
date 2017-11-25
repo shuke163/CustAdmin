@@ -12,7 +12,7 @@ class UserInfoConfig(v1.AryaConfig):
     """
     自定义用户信息UI
     """
-    list_display = ['username', 'ut', 'roles', 'email']
+    list_display = ['username', 'email']
 
 
 class UserTypeConfig(v1.AryaConfig):

@@ -10,6 +10,7 @@ class AryaConfig(object):
     """
     每个models类的URL对应处理的View实现
     """
+    list_display = []
 
     def __init__(self, model_class, site):
         self.model_class = model_class
@@ -32,8 +33,22 @@ class AryaConfig(object):
         :param request:
         :return:
         """
-        # return HttpResponse("列表页面")
-        return render(request, 'arya/changelist.html')
+        data_list = []
+        queryset = self.model_class.objects.all()
+        print(queryset[0].__dict__)
+        for row in queryset:
+            if not self.list_display:
+                data_list.append([row, ])
+            else:
+                temp = []
+                for column in self.list_display:
+                    if isinstance(column, str):
+                        print(getattr(row, column))
+                        temp.append(getattr(row, column))
+
+                data_list.append(temp)
+                # return HttpResponse("列表页面")
+        return render(request, 'arya/changelist.html', {'data_list': data_list})
 
     def add_view(self, request):
         """

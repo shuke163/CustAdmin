@@ -1,8 +1,14 @@
 {% extends 'index.html' %}
 
-
 {% block right-content %}
     <div class="right-content">
+        {% for row in data_list %}
+            <ul>
+                {% for col in row %}
+                    <li>{{ col }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
         <h2>列表页面</h2>
     </div>
 {% endblock %}

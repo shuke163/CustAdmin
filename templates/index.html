@@ -85,7 +85,6 @@
                 $(this).parents('div.item').siblings().find('a').removeClass('active')
             })
         }
-
         // 控制菜单是否展开
         function EventMenu() {
             $('div.item-title').click(function () {
@@ -93,6 +92,7 @@
                 mene_obj.each(function () {
                     var is_hide = $(this).hasClass('hide');
                     if (is_hide) {
+                        console.log(111);
                         $(this).removeClass('hide')
                     } else {
                         $(this).addClass('hide')
